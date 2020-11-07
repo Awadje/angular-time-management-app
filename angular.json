@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "time-management-app"
+    }
+  },
+  "defaultProject": "time-management-app",
+  "cli": {
+    "analytics": false
+  }
 }

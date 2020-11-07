@@ -1,0 +1,44 @@
+<table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <span>Monday</span>
+        </th>
+        <th>
+          <span>Tuesday</span>
+        </th>
+        <th>
+          <span>Wendsday</span>
+        </th>
+        <th>
+          <span >Thursday</span>
+        </th>
+        <th>
+          <span >Friday</span>
+        </th>
+        <th>
+          <span >Saturday</span>
+        </th>
+        <th>
+          <span >Sunday</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let area of areas">
+        <td>
+            <span>
+                <app-area-detail [area]="area"></app-area-detail>
+            </span>
+        </td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+    </tbody>
+  </table>
