@@ -1,4 +1,4 @@
-import { IAreaDetail } from './../interfaces/area-detail.d.interface';
+import { IAreaDetail } from './../interfaces/area-detail.interface';
 
 export const AREAS: IAreaDetail[] = [
   { 
