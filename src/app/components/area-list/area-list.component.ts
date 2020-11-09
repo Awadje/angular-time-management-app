@@ -1,5 +1,5 @@
+import { IAreaDetail } from '../../interfaces/area-detail.interface';
 import { AreaService } from '../../services/area.service';
-import { IAreaList } from '../../interfaces/area-list.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./area-list.component.scss']
 })
 export class AreaListComponent implements OnInit {
-  areas: IAreaList;
+  areas: IAreaDetail[];
 
   constructor(private areaService: AreaService) { }
 

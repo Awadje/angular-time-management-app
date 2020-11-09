@@ -1,6 +1,6 @@
-import { IAreaList } from '../interfaces/area-list.interface';
+import { IAreaDetail } from './../interfaces/area-detail.interface';
 
-export const AREAS: IAreaList = [
+export const AREAS: IAreaDetail[] = [
   { 
     area:"Physical Health", 
     role: 'Father', 
