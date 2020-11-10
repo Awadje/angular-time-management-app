@@ -1,5 +1,3 @@
-import { IAreaDetail } from './../interfaces/area-detail.interface';
-
 export const AREAS: IAreaDetail[] = [
   { 
     area:"Physical Health", 

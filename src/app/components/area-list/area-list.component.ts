@@ -1,4 +1,3 @@
-import { IAreaDetail } from '../../interfaces/area-detail.interface';
 import { AreaService } from '../../services/area.service';
 import { Component, OnInit } from '@angular/core';
 

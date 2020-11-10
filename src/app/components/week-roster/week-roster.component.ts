@@ -1,6 +1,5 @@
-import { IAreaDetail } from '../../interfaces/area-detail.interface';
+import { AreaService } from './../../services/area.service';
 import { Component, OnInit } from '@angular/core';
-import { AreaService } from '../../services/area.service';
 
 @Component({
   selector: 'app-week-roster',
