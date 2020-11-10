@@ -9,6 +9,6 @@ export class AreaService {
   constructor() { }
 
   getAreas(): IAreaDetail[] {
-    return AREAS;
+    return AREAS
   }
 }
