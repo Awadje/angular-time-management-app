@@ -9,6 +9,8 @@ import { IAreaList } from '../../interfaces/area-list.interface';
 })
 export class WeekRosterComponent implements OnInit {
   areas: IAreaList;
+  currentDate = new Date(Date.now())
+  startDate = new Date(2020, 9 ,1)
 
   constructor(private areaService: AreaService) { }
 

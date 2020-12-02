@@ -120,6 +120,13 @@
     ora "4.0.4"
     rxjs "6.5.5"
 
+"@angular-redux/store@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-10.0.0.tgz#21a829a982379b48d4e8493266693beaf09a639a"
+  integrity sha512-oLaj4XSObz1jmpA2qc9WptllEDJPaM0n6AVZLP5GAWH4ytf4nc7hjb3J79xebVm/+elN3D0kyYxO9kNIFL7HYw==
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/animations@~10.0.11":
   version "10.0.14"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-10.0.14.tgz#8e7fa9b26c70cf8e67ec0cc943211eb3957dda8c"
@@ -2925,6 +2932,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-fns@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 date-format@^2.1.0:
   version "2.1.0"
