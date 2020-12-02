@@ -32,13 +32,7 @@
                 <app-area-detail [area]="area"></app-area-detail>
             </span>
         </td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
+        <td *ngFor="let td of [].constructor(7)"><input type="checkbox"></td>
       </tr>
     </tbody>
   </table>

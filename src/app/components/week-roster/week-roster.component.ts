@@ -1,6 +1,5 @@
+import { AreaService } from './../../services/area.service';
 import { Component, OnInit } from '@angular/core';
-import { AreaService } from '../../services/area.service';
-import { IAreaList } from '../../interfaces/area-list.interface';
 
 @Component({
   selector: 'app-week-roster',
@@ -8,7 +7,7 @@ import { IAreaList } from '../../interfaces/area-list.interface';
   styleUrls: ['./week-roster.component.scss']
 })
 export class WeekRosterComponent implements OnInit {
-  areas: IAreaList;
+  areas: IAreaDetail[];
   currentDate = new Date(Date.now())
   startDate = new Date(2020, 9 ,1)
 
