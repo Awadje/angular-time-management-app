@@ -36,7 +36,7 @@ export class WeekSelectorComponent implements OnInit {
   selectWeek(next: boolean) {
     next ? this.date = addWeeks(this.date, 1) : this.date = subWeeks(this.date, 1);
     this.weekNumber = getWeek(this.date)
-    console.log('weekno', this.weekNumber)
+  
     const isDateBeforeStartDate = this.checkIsDateBeforeStartDate();
     const isCurrentWeek = this.getCurrentWeekBoolean()
     
