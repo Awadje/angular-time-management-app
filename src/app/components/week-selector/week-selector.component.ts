@@ -1,6 +1,5 @@
-import { async } from '@angular/core/testing';
-import { Component, OnInit, Input, Output, EventEmitter, AfterContentChecked } from '@angular/core';
-import { addWeeks, subWeeks, subYears, getWeek, getYear } from 'date-fns';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { addWeeks, subWeeks, getWeek, getYear } from 'date-fns';
 
 @Component({
   selector: 'app-week-selector',
@@ -9,9 +8,9 @@ import { addWeeks, subWeeks, subYears, getWeek, getYear } from 'date-fns';
 })
 export class WeekSelectorComponent implements OnInit {
 
-  @Input() currentDate: Date;
-  @Input() startDate: Date;
-  @Input() subTitle: string;
+  @Input('currentDate') currentDate: Date;
+  @Input('startDate') startDate: Date;
+  @Input('subTitle') subTitle: string;
 
   @Output() passDate = new EventEmitter<number>();
 
@@ -34,36 +33,29 @@ export class WeekSelectorComponent implements OnInit {
     this.year = getYear(this.date)
   }
 
-  onPreviousWeek() {
-    this.date = subWeeks(this.date, 1);
+  selectWeek(next: boolean) {
+    next ? this.date = addWeeks(this.date, 1) : this.date = subWeeks(this.date, 1);
     this.weekNumber = getWeek(this.date)
+    console.log('weekno', this.weekNumber)
+    const isDateBeforeStartDate = this.checkIsDateBeforeStartDate();
+    const isCurrentWeek = this.getCurrentWeekBoolean()
     
-    this.setCurrentWeekBoolean();
+    this.getCurrentWeekBoolean();
     
-    
-    this.disabledRight = false;
-    this.disabledLeft = this.isDateBeforeStartDate();
+    this.disabledLeft = isDateBeforeStartDate
+    this.disabledRight = isCurrentWeek 
     
     this.passDate.emit(this.weekNumber);
   }
 
-  onNextWeek() {
-    this.date = addWeeks(this.date, 1);
-    this.weekNumber = getWeek(this.date)
-    
-    this.passDate.emit(this.weekNumber);
-    
-    this.disabledLeft = false;
-    this.isStartingWeek = false
-    
-    this.disabledRight = this.setCurrentWeekBoolean();
+  private getCurrentWeekBoolean() {
+    return getYear(this.date) === getYear(this.currentDate) && 
+    getWeek(this.date) === getWeek(this.currentDate);
   }
 
-  private setCurrentWeekBoolean() {
-    return getYear(this.date) === getYear(this.currentDate) && getWeek(this.date) === getWeek(this.currentDate);
-  }
-
-  private isDateBeforeStartDate() {
-    return getYear(this.date) < getYear(this.startDate) || (getYear(this.date) === getYear(this.startDate) && getWeek(this.date) <= getWeek(this.startDate) );
-  }
+  private checkIsDateBeforeStartDate() {
+    if(getYear(this.date) === getYear(this.startDate)) {
+      return getWeek(this.date) <= getWeek(this.startDate);
+   }
+   return getYear(this.date) < getYear(this.startDate);  }
 }

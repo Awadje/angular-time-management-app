@@ -1,9 +1,8 @@
-<br>
-<br>
+<div class="u-margin-top-huge">
     <div>
         <div>
             <button
-                (click)="onPreviousWeek()"
+                (click)="selectWeek(false)"
                 [disabled]="disabledLeft"
             > 
                 < 
@@ -16,7 +15,7 @@
 
         <div>
             <button
-                (click)="onNextWeek()"
+                (click)="selectWeek(true)"
                 [disabled]="disabledRight"
             >
                  > 
