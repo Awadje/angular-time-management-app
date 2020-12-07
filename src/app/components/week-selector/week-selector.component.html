@@ -2,7 +2,7 @@
     <div>
         <div>
             <button
-                (click)="selectWeek(false)"
+                (click)="goToPreviousWeek()"
                 [disabled]="disabledLeft"
             > 
                 < 
@@ -15,7 +15,7 @@
 
         <div>
             <button
-                (click)="selectWeek(true)"
+                (click)="goToNextWeek()"
                 [disabled]="disabledRight"
             >
                  > 

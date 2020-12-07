@@ -16,25 +16,33 @@ export class WeekSelectorComponent implements OnInit {
 
   weekNumber: number;
   year: number;
-  isCurrentWeek: boolean;
-  isStartingWeek: boolean;
+  isCurrentWeek: boolean = true;
   disabledLeft: boolean = false;
-  disabledRight: boolean;
+  disabledRight: boolean = true;
+  isStartingWeek: boolean;
   date: Date
 
   constructor() {}
 
   ngOnInit() {
-    this.isCurrentWeek = true;
-    this.disabledRight = true;
     this.date = this.currentDate
     this.weekNumber = getWeek(this.date);
     this.passDate.emit(this.weekNumber)
     this.year = getYear(this.date)
   }
 
-  selectWeek(next: boolean) {
-    next ? this.date = addWeeks(this.date, 1) : this.date = subWeeks(this.date, 1);
+  goToNextWeek() {
+    let selection = { direction: 'next' }
+    this.selectWeek(selection)
+  }
+
+  goToPreviousWeek() {
+    let selection = { direction: 'previous' }
+    this.selectWeek(selection)
+  }
+
+  private selectWeek(selection: object) {
+    selection['direction'] === 'next' ? this.date = addWeeks(this.date, 1) : this.date = subWeeks(this.date, 1);
     this.weekNumber = getWeek(this.date)
   
     const isDateBeforeStartDate = this.checkIsDateBeforeStartDate();

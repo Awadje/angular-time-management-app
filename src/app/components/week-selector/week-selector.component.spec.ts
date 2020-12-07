@@ -31,7 +31,7 @@ describe('WeekSelectorComponent start date equal to current date', () => {
 
 
     component.ngOnInit()
-    component.selectWeek(false)
+    component.goToPreviousWeek()
 
     expect(component.weekNumber).toBe(currentWeekMinusOne);
     expect(component.passDate.emit).toHaveBeenCalledWith(currentWeekMinusOne)
@@ -42,15 +42,13 @@ describe('WeekSelectorComponent start date equal to current date', () => {
   it('should emit weeknumber plus one when clicked', () => {
     spyOn(component.passDate, 'emit');
     fixture.detectChanges();
-    let currentWeekPlussOne = getWeek(addWeeks(component.date, 1))
-    component.isCurrentWeek = true;
-    component.date = component.currentDate
+  
+    let currentWeekPlusOne = getWeek(addWeeks(component.date, 1))
 
-    component.ngOnInit()
-    component.selectWeek(true)
+    component.goToNextWeek()
 
-    expect(component.weekNumber).toBe(currentWeekPlussOne);
-    expect(component.passDate.emit).toHaveBeenCalledWith(currentWeekPlussOne)
+    expect(component.weekNumber).toBe(currentWeekPlusOne);
+    expect(component.passDate.emit).toHaveBeenCalledWith(currentWeekPlusOne)
     expect(component.disabledLeft).toBe(false)
     expect(component.disabledRight).toBe(false)
   });
@@ -71,8 +69,7 @@ describe('WeekSelectorComponent start date equal to current date', () => {
       fixture.detectChanges();
       let currentWeekMinusOne = getWeek(subWeeks(component.date, 1))
   
-      component.ngOnInit()
-      component.selectWeek(false)
+      component.goToPreviousWeek()
   
       expect(component.weekNumber).toBe(currentWeekMinusOne);
       expect(component.passDate.emit).toHaveBeenCalledWith(currentWeekMinusOne)
