@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeekRosterComponent implements OnInit {
   areas: IAreaDetail[];
+  currentDate = new Date(Date.now())
+  startDate = new Date(2020, 9 ,1)
 
   constructor(private areaService: AreaService) { }
 
