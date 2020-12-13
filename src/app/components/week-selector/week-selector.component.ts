@@ -65,5 +65,6 @@ export class WeekSelectorComponent implements OnInit {
     if(getYear(this.date) === getYear(this.startDate)) {
       return getWeek(this.date) <= getWeek(this.startDate);
    }
-   return getYear(this.date) < getYear(this.startDate);  }
+   return getYear(this.date) < getYear(this.startDate);  
+  }
 }
