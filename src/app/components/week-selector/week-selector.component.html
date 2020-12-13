@@ -1,0 +1,34 @@
+<div class="u-margin-top-huge">
+    <div>
+        <div>
+            <button
+                (click)="goToPreviousWeek()"
+                [disabled]="disabledLeft"
+            > 
+                < 
+            </button>
+        </div>
+
+        <div>
+            {{ weekNumber }}
+        </div>
+
+        <div>
+            <button
+                (click)="goToNextWeek()"
+                [disabled]="disabledRight"
+            >
+                 > 
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <h1 *ngIf="disabledRight"> 
+            Current Week
+        </h1>
+        <h1 *ngIf="disabledLeft"> 
+            Starting Week
+        </h1>
+    </div>
+<div class="u-margin-bottom-huge">

@@ -1,25 +1,30 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoleDetailComponent } from './area-detail.component';
+import { AreaDetailComponent } from './area-detail.component';
 
-describe('RoleComponent', () => {
-  let component: RoleDetailComponent;
-  let fixture: ComponentFixture<RoleDetailComponent>;
+describe('AreaDetailComponent', () => {
+  let component: AreaDetailComponent;
+  let fixture: ComponentFixture<AreaDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoleDetailComponent ]
+      declarations: [ AreaDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoleDetailComponent);
+    fixture = TestBed.createComponent(AreaDetailComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    component.area = { 
+      area: 'test', 
+      role: 'test', 
+      action: 'test'
+   }
+   fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+   expect(component).toBeTruthy();
   });
 });

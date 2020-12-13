@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoleListComponent } from './area-list.component';
+import { AreaListComponent } from './area-list.component';
 
 describe('RoleListComponent', () => {
-  let component: RoleListComponent;
-  let fixture: ComponentFixture<RoleListComponent>;
+  let component: AreaListComponent;
+  let fixture: ComponentFixture<AreaListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoleListComponent ]
+      declarations: [ AreaListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoleListComponent);
+    fixture = TestBed.createComponent(AreaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
