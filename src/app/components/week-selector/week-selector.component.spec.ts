@@ -29,8 +29,6 @@ describe('WeekSelectorComponent start date equal to current date', () => {
     fixture.detectChanges();
     let currentWeekMinusOne = getWeek(subWeeks(component.date, 1))
 
-
-    // component.ngOnInit()
     component.goToPreviousWeek()
 
     expect(component.weekNumber).toBe(currentWeekMinusOne);
