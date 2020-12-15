@@ -43,9 +43,9 @@ export class WeekSelectorComponent implements OnInit {
     this.weekNumber = getWeek(this.date)
   
     const isDateBeforeStartDate = this.checkIsDateBeforeStartDate();
-    const isCurrentWeek = this.getCurrentWeekBoolean()
+    const isCurrentWeek = this.checkIsCurrentWeek()
     
-    this.getCurrentWeekBoolean();
+    this.checkIsCurrentWeek();
     
     this.disabledLeft = isDateBeforeStartDate
     this.disabledRight = isCurrentWeek 
@@ -53,7 +53,7 @@ export class WeekSelectorComponent implements OnInit {
     this.passDate.emit(this.weekNumber);
   }
 
-  private getCurrentWeekBoolean() {
+  private checkIsCurrentWeek() {
     return getYear(this.date) === getYear(this.currentDate) && 
     getWeek(this.date) === getWeek(this.currentDate);
   }
